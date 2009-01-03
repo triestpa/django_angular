@@ -1,7 +1,7 @@
 <nav class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#we-are-borg-navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#not-google-plus-nav">
         <span class="sr-only">Toggle Navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -10,7 +10,7 @@
       <a class="navbar-brand" href="/">We Are Borg</a>
     </div> <!-- ./navbar-header -->
 
-    <div class="collapse navbar-collapse" id="we-are-borg-navbar">
+    <div class="collapse navbar-collapse" id="not-google-plus-nav">
       <ul class="nav navbar-nav pull-right">
         {% if user.is_authenticated %}
           <li><a href="/+{{ user.username }}">+{{ user.username }}</a></li>
