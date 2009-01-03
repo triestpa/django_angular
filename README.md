@@ -20,6 +20,8 @@
 
 *NOTE: Requires [Heroku Toolbelt](https://toolbelt.heroku.com/).*
 
+*NOTE: All Heroku commands should be run from the root directory of your project.*
+
 * `$ heroku apps:create`
 * `$ heroku config:set BUILDPACK_URL=https://github.com/ddollar/heroku-buildpack-multi.git`
 * `$ heroku config:set DEBUG=False`
