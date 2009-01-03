@@ -1,8 +1,9 @@
 from django.conf.urls import patterns, url
-from django.views.generic.base import TemplateView
+
+from thinkster_django_angular_boilerplate.views import IndexView
 
 urlpatterns = patterns(
     '',
 
-    url('^.*$', TemplateView.as_view(template_name='index.html'), name='index'),
+    url('^.*$', IndexView.as_view(), name='index'),
 )
