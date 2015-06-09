@@ -5,7 +5,15 @@ from authentication.permissions import IsAccountOwner
 from authentication.serializers import AccountSerializer
 
 import json
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
+
+class LogoutView(views.APIView):
+    permissions_class = (permissions.IsAuthenticated,)
+
+    def post(self, request, format=None):
+        logout(request)
+
+        return Response({}, status=status.HTTP_204_NO_CONTENT)
 
 class LoginView(views.APIView):
     def post(self, request, format=None):
