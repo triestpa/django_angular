@@ -1,4 +1,4 @@
-(function () {
+(function() {
   'use strict';
 
   angular
@@ -41,25 +41,25 @@
         $location.url('/');
         Snackbar.error('That user does not exist');
       }
+    }
 
-      function destroy() {
-        Profile.destroy(vm.profile.username).then(profileSuccessFn, profileErrorFn);
+    function destroy() {
+      Profile.destroy(vm.profile.username).then(profileSuccessFn, profileErrorFn);
 
-        function profileSuccessFn(data, status, headers, config) {
-          Authentication.unauthenticate();
-          window.location = '/';
+      function profileSuccessFn(data, status, headers, config) {
+        Authentication.unauthenticate();
+        window.location = '/';
 
-          Snackbar.show('Your account has been deleted');
-        }
-
-        function profileErrorFn(data, status, headers, config) {
-          Snackbar.console.error(data.error);
-        }
+        Snackbar.show('Your account has been deleted');
       }
 
-      function update() {
-        Profile.update(vm.profile).then(profileSuccessFn, profileErrorFn);
+      function profileErrorFn(data, status, headers, config) {
+        Snackbar.console.error(data.error);
       }
+    }
+
+    function update() {
+      Profile.update(vm.profile).then(profileSuccessFn, profileErrorFn);
 
       function profileSuccessFn(data, status, headers, config) {
         Snackbar.show('Your profile has been updated.');
