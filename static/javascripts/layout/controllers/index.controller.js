@@ -27,7 +27,7 @@
             });
 
             function postSuccessFn(data, status, headers, config) {
-                vm.posts = data.dat;
+                vm.posts = data.data;
             }
 
             function postsErrorFn(data, status, headers, config) {

@@ -7,7 +7,7 @@ from posts.permissions import IsAuthorOfPost
 from posts.serializers import PostSerializer
 
 class PostViewSet(viewsets.ModelViewSet):
-    queryset = Post.objects.order_by('created_at')
+    queryset = Post.objects.order_by('-created_at')
     serializer_class = PostSerializer
 
     def get_permissions(self):
@@ -20,7 +20,7 @@ class PostViewSet(viewsets.ModelViewSet):
         return super(PostViewSet, self).perform_create(serializer)
 
 class AccountPostsViewSet(viewsets.ViewSet):
-    queryset = Post.objects.select_releated('author').all()
+    queryset = Post.objects.select_related('author').all()
     serializer_class = PostSerializer
 
     def list(self, request, account_username=None):
