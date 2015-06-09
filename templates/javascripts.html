@@ -2,6 +2,12 @@
 {% load staticfiles %}
 
 {% compress js %}
+<script type="text/javascript" src="{% static 'javascripts/thinkster.config.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/thinkster.routes.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/authentication/authentication.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/authentication/services/authentication.service.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/authentication/controllers/register.controller.js' %}"></script>
+
 <script type="text/javascript" src="{% static 'bower_components/jquery/dist/jquery.js' %}"></script>
 <script type="text/javascript" src="{% static 'bower_components/bootstrap/dist/js/bootstrap.js' %}"></script>
 <script type="text/javascript" src="{% static 'bower_components/bootstrap-material-design/dist/js/material.js' %}"></script>
