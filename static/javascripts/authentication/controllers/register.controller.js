@@ -21,16 +21,13 @@
 
         vm.register = register;
 
+       /**
+        * @name register
+        * @desc Register a new user
+        * @memberOf thinkster.authentication.controllers.RegisterController
+        */
+        function register() {
+            Authentication.register(vm.email, vm.password, vm.username);
+        }
     }
-
-
-   /**
-    * @name register
-    * @desc Register a new user
-    * @memberOf thinkster.authentication.controllers.RegisterController
-    */
-    function register() {
-        Authentication.register(vm.email, vm.password, vm.username);
-    }
-
-})
+})();
